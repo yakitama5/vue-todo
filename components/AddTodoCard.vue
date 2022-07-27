@@ -21,7 +21,7 @@
 
     <b-card v-if="todo.editing" class="edit-card">
       <b-form-input
-        id="edit-add-todo"
+        ref="todoForm"
         v-model="todo.title"
         class="no-border no-box-shadow"
         autofocus
@@ -46,7 +46,7 @@ export default {
   methods: {
     onClickCard(todo) {
       todo.editing = true;
-      this.$nextTick(() => document.getElementById('edit-add-todo').focus());
+      this.$nextTick(() => this.$refs.todoForm.focus());
     },
     add(todo) {
       this.$store.commit('todos/add', todo.title);

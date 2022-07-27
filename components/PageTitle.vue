@@ -7,9 +7,8 @@
     ></span>
     <b-form-input
       v-if="title.editing"
-      id="edit-page-title"
+      ref="titleForm"
       v-model="title.value"
-      autofocus
       @blur="title.editing = false"
       @keydown.enter="title.editing = false"
     />
@@ -30,7 +29,7 @@ export default {
   methods: {
     onClickTitle(title) {
       title.editing = true;
-      this.$nextTick(() => document.getElementById('edit-page-title').focus());
+      this.$nextTick(() => this.$refs.titleForm.focus());
     },
   },
 };
