@@ -1,5 +1,11 @@
 <template>
-    <footer>
-        <AddTodoCard />
-    </footer>
+  <footer>
+    <AddTodoCard />
+  </footer>
 </template>
+
+<script>
+export default {
+  name: 'TodoFooter',
+};
+</script>
